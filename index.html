@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title>CARTOGRAPHIE DES INFRASTRUCTURES À TAABTENGA</title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Limitedelazonedintert_0.js"></script>
+        <script src="data/cimetiere_Taabtenga_1.js"></script>
+        <script src="data/Structure_Associatve_2.js"></script>
+        <script src="data/Ecole_3.js"></script>
+        <script src="data/Lieudeculte_4.js"></script>
+        <script src="data/Centre_sante_5.js"></script>
+        <script src="data/PointEau_6.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:20, minZoom:12
+        }).fitBounds([[12.3447740157,-1.47180812582],[12.3794066088,-1.41447130373]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('Réalisation:<a href="http://brigadesolidarite.org/">BRIGADE CITOYENNE DE SOLIDARITE</a>; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 20
+        });
+        basemap0.addTo(map);
+        var basemap1 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 20
+        });
+        basemap1.addTo(map);
+        var basemap2 = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
+            maxZoom: 20
+        });
+        basemap2.addTo(map);
+        function setBounds() {
+        }
+        function pop_Limitedelazonedintert_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Limitedelazonedintert_0_0() {
+            return {
+                pane: 'pane_Limitedelazonedintert_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '10,5',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(204,205,208,0.0)',
+            }
+        }
+        map.createPane('pane_Limitedelazonedintert_0');
+        map.getPane('pane_Limitedelazonedintert_0').style.zIndex = 400;
+        map.getPane('pane_Limitedelazonedintert_0').style['mix-blend-mode'] = 'normal';
+        var layer_Limitedelazonedintert_0 = new L.geoJson(json_Limitedelazonedintert_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Limitedelazonedintert_0',
+            onEachFeature: pop_Limitedelazonedintert_0,
+            style: style_Limitedelazonedintert_0_0,
+        });
+        bounds_group.addLayer(layer_Limitedelazonedintert_0);
+        map.addLayer(layer_Limitedelazonedintert_0);
+        function pop_cimetiere_Taabtenga_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">id</th>\
+                        <td>' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_cimetiere_Taabtenga_1_0() {
+            return {
+                pane: 'pane_cimetiere_Taabtenga_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,180,157,1.0)',
+            }
+        }
+        map.createPane('pane_cimetiere_Taabtenga_1');
+        map.getPane('pane_cimetiere_Taabtenga_1').style.zIndex = 401;
+        map.getPane('pane_cimetiere_Taabtenga_1').style['mix-blend-mode'] = 'normal';
+        var layer_cimetiere_Taabtenga_1 = new L.geoJson(json_cimetiere_Taabtenga_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_cimetiere_Taabtenga_1',
+            onEachFeature: pop_cimetiere_Taabtenga_1,
+            style: style_cimetiere_Taabtenga_1_0,
+        });
+        bounds_group.addLayer(layer_cimetiere_Taabtenga_1);
+        map.addLayer(layer_cimetiere_Taabtenga_1);
+        function pop_Structure_Associatve_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom structure</th>\
+                        <td>' + (feature.properties['Nom de la'] !== null ? Autolinker.link(String(feature.properties['Nom de la'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type aide</th>\
+                        <td>' + (feature.properties['Type aide'] !== null ? Autolinker.link(String(feature.properties['Type aide'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nom du representant</th>\
+                        <td>' + (feature.properties['Nom et pre'] !== null ? Autolinker.link(String(feature.properties['Nom et pre'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Structure_Associatve_2_0() {
+            return {
+                pane: 'pane_Structure_Associatve_2',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(3,236,0,1.0)',
+            }
+        }
+        map.createPane('pane_Structure_Associatve_2');
+        map.getPane('pane_Structure_Associatve_2').style.zIndex = 402;
+        map.getPane('pane_Structure_Associatve_2').style['mix-blend-mode'] = 'normal';
+        var layer_Structure_Associatve_2 = new L.geoJson(json_Structure_Associatve_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Structure_Associatve_2',
+            onEachFeature: pop_Structure_Associatve_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Structure_Associatve_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Structure_Associatve_2);
+        map.addLayer(layer_Structure_Associatve_2);
+        function pop_Ecole_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom Ecole</th>\
+                        <td>' + (feature.properties['Nom Ecole'] !== null ? Autolinker.link(String(feature.properties['Nom Ecole'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type Ecole</th>\
+                        <td>' + (feature.properties['Type Ecole'] !== null ? Autolinker.link(String(feature.properties['Type Ecole'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nbre Eleve</th>\
+                        <td>' + (feature.properties['Nombre Ele'] !== null ? Autolinker.link(String(feature.properties['Nombre Ele'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nbre Homme</th>\
+                        <td>' + (feature.properties['Nbre Homme'] !== null ? Autolinker.link(String(feature.properties['Nbre Homme'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nbre Femme</th>\
+                        <td>' + (feature.properties['Nbre Femme'] !== null ? Autolinker.link(String(feature.properties['Nbre Femme'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nbre de classe</th>\
+                        <td>' + (feature.properties['Nombre de'] !== null ? Autolinker.link(String(feature.properties['Nombre de'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Presence de cantine scolaire</th>\
+                        <td>' + (feature.properties['Presence c'] !== null ? Autolinker.link(String(feature.properties['Presence c'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Photograph</th>\
+                        <td>' + (feature.properties['Photograph'] !== null ? '<img src="images/' + String(feature.properties['Photograph']).replace(/[\\\/:]/g, '_').trim() + '"width="300" height="225">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Ecole_3_0() {
+            return {
+                pane: 'pane_Ecole_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(116,115,112,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,225,55,1.0)',
+            }
+        }
+        map.createPane('pane_Ecole_3');
+        map.getPane('pane_Ecole_3').style.zIndex = 403;
+        map.getPane('pane_Ecole_3').style['mix-blend-mode'] = 'normal';
+        var layer_Ecole_3 = new L.geoJson(json_Ecole_3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Ecole_3',
+            onEachFeature: pop_Ecole_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Ecole_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Ecole_3);
+        map.addLayer(layer_Ecole_3);
+        function pop_Lieudeculte_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Type de lieu</th>\
+                        <td>' + (feature.properties['Type lieu'] !== null ? Autolinker.link(String(feature.properties['Type lieu'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Lieudeculte_4_0() {
+            return {
+                pane: 'pane_Lieudeculte_4',
+                radius: 4.4,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(22,10,10,1.0)',
+            }
+        }
+        map.createPane('pane_Lieudeculte_4');
+        map.getPane('pane_Lieudeculte_4').style.zIndex = 404;
+        map.getPane('pane_Lieudeculte_4').style['mix-blend-mode'] = 'normal';
+        var layer_Lieudeculte_4 = new L.geoJson(json_Lieudeculte_4, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Lieudeculte_4',
+            onEachFeature: pop_Lieudeculte_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Lieudeculte_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Lieudeculte_4);
+        map.addLayer(layer_Lieudeculte_4);
+        function pop_Centre_sante_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom du C.S</th>\
+                        <td>' + (feature.properties['Nom'] !== null ? Autolinker.link(String(feature.properties['Nom'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type de soins</th>\
+                        <td>' + (feature.properties['Types de s'] !== null ? Autolinker.link(String(feature.properties['Types de s'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Horaire Ouverture</th>\
+                        <td>' + (feature.properties['Horaires d'] !== null ? Autolinker.link(String(feature.properties['Horaires d'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Depot Pharmaceutique</th>\
+                        <td>' + (feature.properties['Depot_Phar'] !== null ? Autolinker.link(String(feature.properties['Depot_Phar'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Photograph</th>\
+                        <td>' + (feature.properties['Photograph'] !== null ? '<img src="images/' + String(feature.properties['Photograph']).replace(/[\\\/:]/g, '_').trim() + '"width="300" height="225">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Centre_sante_5_0() {
+            return {
+                pane: 'pane_Centre_sante_5',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(233,57,12,1.0)',
+            }
+        }
+        map.createPane('pane_Centre_sante_5');
+        map.getPane('pane_Centre_sante_5').style.zIndex = 405;
+        map.getPane('pane_Centre_sante_5').style['mix-blend-mode'] = 'normal';
+        var layer_Centre_sante_5 = new L.geoJson(json_Centre_sante_5, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Centre_sante_5',
+            onEachFeature: pop_Centre_sante_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Centre_sante_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Centre_sante_5);
+        map.addLayer(layer_Centre_sante_5);
+        function pop_PointEau_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Type de point d_eau</th>\
+                        <td>' + (feature.properties['Type_pt_ea'] !== null ? Autolinker.link(String(feature.properties['Type_pt_ea'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nobre de robinet fonctionel </th>\
+                        <td>' + (feature.properties['Nombre de'] !== null ? Autolinker.link(String(feature.properties['Nombre de'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nbre d_utilisateurs quotidien</th>\
+                        <td>' + (feature.properties['Combien de'] !== null ? Autolinker.link(String(feature.properties['Combien de'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Structure en charge</th>\
+                        <td>' + (feature.properties['Nom de la'] !== null ? Autolinker.link(String(feature.properties['Nom de la'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Condition Acces</th>\
+                        <td>' + (feature.properties['Condition'] !== null ? Autolinker.link(String(feature.properties['Condition'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Eau potable?</th>\
+                        <td>' + (feature.properties['Eau potabl'] !== null ? Autolinker.link(String(feature.properties['Eau potabl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Periode accessible</th>\
+                        <td>' + (feature.properties['Quand le p'] !== null ? Autolinker.link(String(feature.properties['Quand le p'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nbre d_heure acces</th>\
+                        <td>' + (feature.properties['Nbre heure'] !== null ? Autolinker.link(String(feature.properties['Nbre heure'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Photograph</th>\
+                        <td>' + (feature.properties['Photograph'] !== null ? '<img src="images/' + String(feature.properties['Photograph']).replace(/[\\\/:]/g, '_').trim() + '"width="300" height="225">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PointEau_6_0() {
+            return {
+                pane: 'pane_PointEau_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(45,154,255,1.0)',
+            }
+        }
+        map.createPane('pane_PointEau_6');
+        map.getPane('pane_PointEau_6').style.zIndex = 406;
+        map.getPane('pane_PointEau_6').style['mix-blend-mode'] = 'normal';
+        var layer_PointEau_6 = new L.geoJson(json_PointEau_6, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_PointEau_6',
+            onEachFeature: pop_PointEau_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_PointEau_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_PointEau_6);
+        map.addLayer(layer_PointEau_6);
+        var title = new L.Control();
+        title.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+        title.update = function () {
+            this._div.innerHTML = '<h2>CARTOGRAPHIE DES INFRASTRUCTURES À TAABTENGA</h2>';
+        };
+        title.addTo(map);
+        var baseMaps = {'OSM B&W': basemap0, 'OSM': basemap1, 'OSM HOT': basemap2};
+        L.control.layers(baseMaps,{'<img src="legend/PointEau_6.png" /> Point Eau': layer_PointEau_6,'<img src="legend/Centre_sante_5.png" /> Centre_sante': layer_Centre_sante_5,'<img src="legend/Lieudeculte_4.png" /> Lieu de culte': layer_Lieudeculte_4,'<img src="legend/Ecole_3.png" /> Ecole': layer_Ecole_3,'<img src="legend/Structure_Associatve_2.png" /> Structure_Associatve': layer_Structure_Associatve_2,'<img src="legend/cimetiere_Taabtenga_1.png" /> cimetière_Taabtenga': layer_cimetiere_Taabtenga_1,'<img src="legend/Limitedelazonedintert_0.png" /> Limite de la zone d\'interêt': layer_Limitedelazonedintert_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
